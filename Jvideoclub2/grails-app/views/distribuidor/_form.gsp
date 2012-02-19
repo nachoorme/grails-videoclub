@@ -18,6 +18,22 @@
 	<g:textField name="cif" maxlength="9" pattern="${distribuidorInstance.constraints.cif.matches}" required="" value="${distribuidorInstance?.cif}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: distribuidorInstance, field: 'fechaInicioContrato', 'error')} required">
+	<label for="fechaInicioContrato">
+		<g:message code="distribuidor.fechaInicioContrato.label" default="Fecha Inicio Contrato" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:datePicker name="fechaInicioContrato" precision="day"  value="${distribuidorInstance?.fechaInicioContrato}"  />
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: distribuidorInstance, field: 'fechaFinContrato', 'error')} required">
+	<label for="fechaFinContrato">
+		<g:message code="distribuidor.fechaFinContrato.label" default="Fecha Fin Contrato" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:datePicker name="fechaFinContrato" precision="day"  value="${distribuidorInstance?.fechaFinContrato}"  />
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: distribuidorInstance, field: 'direccion', 'error')} required">
 	<label for="direccion">
 		<g:message code="distribuidor.direccion.label" default="Direccion" />
@@ -66,21 +82,7 @@
 	<g:textField name="fax" maxlength="9" pattern="${distribuidorInstance.constraints.fax.matches}" value="${distribuidorInstance?.fax}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: distribuidorInstance, field: 'fechaInicioContrato', 'error')} required">
-	<label for="fechaInicioContrato">
-		<g:message code="distribuidor.fechaInicioContrato.label" default="Fecha Inicio Contrato" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:datePicker name="fechaInicioContrato" precision="day"  value="${distribuidorInstance?.fechaInicioContrato}"  />
-</div>
 
-<div class="fieldcontain ${hasErrors(bean: distribuidorInstance, field: 'fechaFinContrato', 'error')} required">
-	<label for="fechaFinContrato">
-		<g:message code="distribuidor.fechaFinContrato.label" default="Fecha Fin Contrato" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:datePicker name="fechaFinContrato" precision="day"  value="${distribuidorInstance?.fechaFinContrato}"  />
-</div>
 
 <div class="fieldcontain ${hasErrors(bean: distribuidorInstance, field: 'e_mail', 'error')} required">
 	<label for="e_mail">
@@ -90,20 +92,5 @@
 	<g:field type="email" name="e_mail" required="" value="${distribuidorInstance?.e_mail}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: distribuidorInstance, field: 'pelicula', 'error')} ">
-	<label for="pelicula">
-		<g:message code="distribuidor.pelicula.label" default="Pelicula" />
-		
-	</label>
-	
-<ul class="one-to-many">
-<g:each in="${distribuidorInstance?.pelicula?}" var="p">
-    <li><g:link controller="pelicula" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></li>
-</g:each>
-<li class="add">
-<g:link controller="pelicula" action="create" params="['distribuidor.id': distribuidorInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'pelicula.label', default: 'Pelicula')])}</g:link>
-</li>
-</ul>
 
-</div>
 
