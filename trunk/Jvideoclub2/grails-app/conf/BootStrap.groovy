@@ -18,7 +18,7 @@ class BootStrap {
 		}
 		
 		if(!Pelicula.count()){
-			new Pelicula (titulo: "Matrix", categoria: Categoria.OFERTA, genero: Genero.CienciaFiccion, idioma: Idioma.Ingles, precioBase: "2", distribuidor: Distribuidor1).save(failOnError: true)
+			new Pelicula (titulo: "Matrix", Categoria: tipoCategoria.OFERTA, Genero: tipoGenero.CienciaFiccion, calificacionMoral:"+18", Idioma: Idioma.Ingles, precioBase: "2", distribuidor: Distribuidor1).save(failOnError: true)
 		}
     }
     def destroy = {

@@ -136,10 +136,9 @@ class PeliculaController {
 	def crearListaPeliDis () {
 		println params
 		if (params.distribuidor!=null){
-		def peliDisInstance = filtraPeliService.filtraPeliDis(params.distribuidor.id)
-		params.max = Math.min(params.max ? params.int('max') : 10, 100)
-		[peliDisInstance: Pelicula.list(params), peliDisInstanceTotal: Pelicula.count()]
-
+		def distribuidorpelis = filtraPeliService.filtraPeliDis(params.distribuidor.id)
+		render(view: "list", model: [peliculaInstanceList: distribuidorpelis, peliculaInstanceListTotal: distribuidorpelis.length()])
+		
 		}
 	} 
 }

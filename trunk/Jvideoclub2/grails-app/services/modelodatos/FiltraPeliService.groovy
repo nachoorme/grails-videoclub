@@ -5,8 +5,8 @@ class FiltraPeliService {
 	static transactional = true
 	
     def filtraPeliDis(String id) {
-		def peliDisInstance
-		return peliDisInstance = pelicula.list(id)
+		Distribuidor distribResult= Distribuidor.findByid(id)
+		return distribResult?.pelicula;
 
     }
 }
