@@ -4,7 +4,7 @@ import org.springframework.dao.DataIntegrityViolationException
 
 class DistribuidorController {
 
-    static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+    static allowedMethods = [save: "POST", update: "POST"]
 
     def index() {
         redirect(action: "list", params: params)
@@ -106,8 +106,33 @@ class DistribuidorController {
 	 [distribuidorInstance: new Distribuidor(params)]
 	}
 	
+	def saveDistribuidora = {
+		def distribuidorInstance = new Distribuidor(params)
+		if (!distribuidorInstance.save(flush: true)) {
+			render(view: "crearAltaDistribuidor", model: [distribuidorInstance: distribuidorInstance])
+			return
+		}
+
+		flash.message = message(code: 'default.created.message', args: [message(code: 'distribuidor.label', default: 'Distribuidor'), distribuidorInstance.id])
+		redirect(action: "show", id: distribuidorInstance.id)
+	}
 	
+	def darBajaDistribuidor = {
+		params.max = Math.min(params.max ? params.int('max') : 10, 100)
+		[distribuidorInstanceList: Distribuidor.list(params), distribuidorInstanceTotal: Distribuidor.count()]
+	}
 	
+	def listarDistribuidor = {
+		redirect (action: "list")
+	}
 	
+	def mostrarDistribuidor = {
+		params.max = Math.min(params.max ? params.int('max') : 10, 100)
+		[distribuidorInstanceList: Distribuidor.list(params), distribuidorInstanceTotal: Distribuidor.count()]
+	}
 	
+	def modificarDistribuidor = {
+		params.max = Math.min(params.max ? params.int('max') : 10, 100)
+		[distribuidorInstanceList: Distribuidor.list(params), distribuidorInstanceTotal: Distribuidor.count()]
+	}
 }

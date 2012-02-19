@@ -115,8 +115,11 @@
 					<li class="controller"><g:link controller="socio" action="mostrarSocio">Mostrar Socio</g:link></li>
 					<li class="controller"><g:link controller="socio" action="modificarSocio">Modificar Datos Socio</g:link></li>
 				    <li class="controller"><g:link controller="socio" action="imprimirCarnet">Imprimir Carnet Socio</g:link></li>
-
-                    
+				    <li class="controller"><g:link controller="distribuidor" action="crearAltaDistribuidor">Alta Distribuidora</g:link></li>
+				    <li class="controller"><g:link controller="distribuidor" action="darBajaDistribuidor">Baja Distribuidora</g:link></li>
+				    <li class="controller"><g:link controller="distribuidor" action="listarDistribuidor">Mostrar Listado Distribuidoras</g:link></li>
+					<li class="controller"><g:link controller="distribuidor" action="mostrarDistribuidor">Mostrar Datos Distribuidora</g:link></li>
+                    <li class="controller"><g:link controller="distribuidor" action="modificarDistribuidor">Modificar Datos Distribuidora</g:link></li>
 					
 				</ul>
 			</div>

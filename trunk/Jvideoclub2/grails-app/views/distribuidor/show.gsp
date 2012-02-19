@@ -4,24 +4,32 @@
 <html>
 	<head>
 		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'distribuidor.label', default: 'Distribuidor')}" />
-		<title><g:message code="default.show.label" args="[entityName]" /></title>
+		<g:set var="entityName" value="${message(code: 'Mostrar Distribuidora', default: 'Distribuidor')}" />
+		<title><g:message code="Mostrar Distribuidora" args="[entityName]" /></title>
 	</head>
 	<body>
 		<a href="#show-distribuidor" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+
 			</ul>
 		</div>
 		<div id="show-distribuidor" class="content scaffold-show" role="main">
-			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
+			<h1><g:message code="Mostrar Distribuidora" args="[entityName]" /></h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<ol class="property-list distribuidor">
+			
+			<g:if test="${distribuidorInstance?.id}">
+				<li class="fieldcontain">
+					<span id="id-label" class="property-label"><g:message code="Código distribuidora" default="Id" /></span>
+					
+						<span class="property-value" aria-labelledby="id-label"><g:fieldValue bean="${distribuidorInstance}" field="id"/></span>
+					
+				</li>
+				</g:if>
 			
 				<g:if test="${distribuidorInstance?.nombre}">
 				<li class="fieldcontain">
@@ -39,6 +47,25 @@
 						<span class="property-value" aria-labelledby="cif-label"><g:fieldValue bean="${distribuidorInstance}" field="cif"/></span>
 					
 				</li>
+				
+				<g:if test="${distribuidorInstance?.fechaInicioContrato}">
+				<li class="fieldcontain">
+					<span id="fechaInicioContrato-label" class="property-label"><g:message code="distribuidor.fechaInicioContrato.label" default="Fecha Inicio Contrato" /></span>
+					
+						<span class="property-value" aria-labelledby="fechaInicioContrato-label"><g:formatDate date="${distribuidorInstance?.fechaInicioContrato}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${distribuidorInstance?.fechaFinContrato}">
+				<li class="fieldcontain">
+					<span id="fechaFinContrato-label" class="property-label"><g:message code="distribuidor.fechaFinContrato.label" default="Fecha Fin Contrato" /></span>
+					
+						<span class="property-value" aria-labelledby="fechaFinContrato-label"><g:formatDate date="${distribuidorInstance?.fechaFinContrato}" /></span>
+					
+				</li>
+				</g:if>
+				
 				</g:if>
 			
 				<g:if test="${distribuidorInstance?.direccion}">
@@ -95,23 +122,7 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${distribuidorInstance?.fechaInicioContrato}">
-				<li class="fieldcontain">
-					<span id="fechaInicioContrato-label" class="property-label"><g:message code="distribuidor.fechaInicioContrato.label" default="Fecha Inicio Contrato" /></span>
-					
-						<span class="property-value" aria-labelledby="fechaInicioContrato-label"><g:formatDate date="${distribuidorInstance?.fechaInicioContrato}" /></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${distribuidorInstance?.fechaFinContrato}">
-				<li class="fieldcontain">
-					<span id="fechaFinContrato-label" class="property-label"><g:message code="distribuidor.fechaFinContrato.label" default="Fecha Fin Contrato" /></span>
-					
-						<span class="property-value" aria-labelledby="fechaFinContrato-label"><g:formatDate date="${distribuidorInstance?.fechaFinContrato}" /></span>
-					
-				</li>
-				</g:if>
+
 			
 				<g:if test="${distribuidorInstance?.e_mail}">
 				<li class="fieldcontain">
@@ -121,26 +132,10 @@
 					
 				</li>
 				</g:if>
-			
-				<g:if test="${distribuidorInstance?.pelicula}">
-				<li class="fieldcontain">
-					<span id="pelicula-label" class="property-label"><g:message code="distribuidor.pelicula.label" default="Pelicula" /></span>
-					
-						<g:each in="${distribuidorInstance.pelicula}" var="p">
-						<span class="property-value" aria-labelledby="pelicula-label"><g:link controller="pelicula" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>
-						</g:each>
-					
-				</li>
-				</g:if>
+		
 			
 			</ol>
-			<g:form>
-				<fieldset class="buttons">
-					<g:hiddenField name="id" value="${distribuidorInstance?.id}" />
-					<g:link class="edit" action="edit" id="${distribuidorInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-				</fieldset>
-			</g:form>
+
 		</div>
 	</body>
 </html>
