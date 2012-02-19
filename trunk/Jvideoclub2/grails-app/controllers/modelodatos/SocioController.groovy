@@ -101,7 +101,6 @@ class SocioController {
         }
     }
 	
-	def buscaSocioService;
 	def calcularSocioMayorService
 
 	

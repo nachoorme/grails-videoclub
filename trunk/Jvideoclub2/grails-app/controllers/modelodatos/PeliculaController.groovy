@@ -101,6 +101,7 @@ class PeliculaController {
         }
     }
 	
+	def filtraPeliService
 	
 	def altaPelicula() {
 		[peliculaInstance: new Pelicula(params)]
@@ -133,13 +134,12 @@ class PeliculaController {
 	}
 	
 	def crearListaPeliDis () {
+		println params
 		if (params.distribuidor!=null){
-			if (edadResult) {
-				redirect (action:"altaSocioMayor")
-			}
-			else {
-				redirect (action:"altaSocioMenor")
-			}
+		def peliDisInstance = filtraPeliService.filtraPeliDis(params.distribuidor.id)
+		params.max = Math.min(params.max ? params.int('max') : 10, 100)
+		[peliDisInstance: Pelicula.list(params), peliDisInstanceTotal: Pelicula.count()]
+
 		}
 	} 
 }

@@ -120,6 +120,7 @@
 				    <li class="controller"><g:link controller="distribuidor" action="listarDistribuidor">Mostrar Listado Distribuidoras</g:link></li>
 					<li class="controller"><g:link controller="distribuidor" action="mostrarDistribuidor">Mostrar Datos Distribuidora</g:link></li>
                     <li class="controller"><g:link controller="distribuidor" action="modificarDistribuidor">Modificar Datos Distribuidora</g:link></li>
+                    <li class="controller"><g:link controller="pelicula" action="crearListaPeliDis">Mostrar Películas Distribuidor</g:link></li>
 					
 				</ul>
 			</div>
