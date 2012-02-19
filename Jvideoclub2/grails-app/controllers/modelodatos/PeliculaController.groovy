@@ -4,7 +4,7 @@ import org.springframework.dao.DataIntegrityViolationException
 
 class PeliculaController {
 
-    static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+    static allowedMethods = [save: "POST", update: "POST"]
 
     def index() {
         redirect(action: "list", params: params)
@@ -27,7 +27,7 @@ class PeliculaController {
         }
 
 		flash.message = message(code: 'default.created.message', args: [message(code: 'pelicula.label', default: 'Pelicula'), peliculaInstance.id])
-        redirect(action: "show", id: peliculaInstance.id)
+        redirect(action: "mostrar", id: peliculaInstance.id)
     }
 
     def show() {
@@ -100,4 +100,35 @@ class PeliculaController {
             redirect(action: "show", id: params.id)
         }
     }
+	
+	
+	def altaPelicula() {
+		[peliculaInstance: new Pelicula(params)]
+	}
+	
+	def darBajaPelicula() {
+		params.max = Math.min(params.max ? params.int('max') : 10, 100)
+		[peliculaInstanceList: Pelicula.list(params), peliculaInstanceTotal: Pelicula.count()]
+	}
+	
+	def listarPelicula() {
+		params.max = Math.min(params.max ? params.int('max') : 10, 100)
+		[peliculaInstanceList: Pelicula.list(params), peliculaInstanceTotal: Pelicula.count()]
+	}
+	
+	def mostrarPelicula() {
+		params.max = Math.min(params.max ? params.int('max') : 10, 100)
+		[peliculaInstanceList: Pelicula.list(params), peliculaInstanceTotal: Pelicula.count()]
+	}
+	
+	def mostrar() {
+		def peliculaInstance = Pelicula.get(params.id)
+		if (!peliculaInstance) {
+			flash.message = message(code: 'default.not.found.message', args: [message(code: 'pelicula.label', default: 'Pelicula'), params.id])
+			redirect(action: "list")
+			return
+		}
+
+		[peliculaInstance: peliculaInstance]
+	}
 }

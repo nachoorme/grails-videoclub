@@ -3,23 +3,27 @@ package modelodatos
 public enum Idioma {
 
 	Chino("Chino"),
-	Ingles("InglÈs"),
+	Ingles("Ingl√©s"),
 	Indio("Indio"),
-	Espagnol("EspaÒol"),
-	Portugues("Portugues"),
+	Espagnol("Espa√±ol"),
+	Portugues("Portugu√©s"),
 	Ruso("Ruso"),
-	Arabe("¡rabe"),
-	Japones("JaponÈs"),
-	Frances("FrancÈs"),
-	Aleman("Alem·n"),
+	Arabe("√Årabe"),
+	Japones("Japon√©s"),
+	Frances("Franc√©s"),
+	Aleman("Alem√°n"),
 	Coreano("Coreano"),
 	Italiano("Italiano"),
-	Cantones("CantonÈs"),
+	Cantones("Canton√©s"),
 	Ucraniano("Ucraniano"),
-	Holandes("HolandÈs")
+	Holandes("Holand√©s")
 
 	String tipo
 	Idioma(String tipo) {
 		this.tipo = tipo
+	}
+	
+	String toString(){
+		return tipo;
 	}
 }
