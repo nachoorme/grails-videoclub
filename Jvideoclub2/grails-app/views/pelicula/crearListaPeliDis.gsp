@@ -12,7 +12,7 @@
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
         </div>
         <div class="body">
-		<h1><p align="center"><g:message  code="Escoja la distribuidora de las películas :"   args="[entityName]" /></h1>
+		<h1><p align="center"><g:message  code="Escoja la distribuidora de las películas:"   args="[entityName]" /></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -29,14 +29,9 @@
 					<span class="required-indicator">*</span>
 					</label>
 				<g:select id="distribuidor" name="distribuidor.id" from="${modelodatos.Distribuidor.list()}" optionKey="id" required="" value="${peliculaInstance?.distribuidor?.id}" class="many-to-one"/>
-</div>
-                
-                
-                
-                
-                
+				</div>
                 <div class="buttons">
-                    <span class="button"><g:submitButton name="search" class="search" value="Crear Socio" /></span>
+                    <span class="button"><g:submitButton name="search" class="search" value="Listar Películas" /></span>
                 </div>
             </g:form>
         </div>
