@@ -102,11 +102,11 @@ class DistribuidorController {
     }
 
 		
-	def crearAltaDistribuidor = {
+	def crearAltaDistribuidor () {
 	 [distribuidorInstance: new Distribuidor(params)]
 	}
 	
-	def saveDistribuidora = {
+	def saveDistribuidora () {
 		def distribuidorInstance = new Distribuidor(params)
 		if (!distribuidorInstance.save(flush: true)) {
 			render(view: "crearAltaDistribuidor", model: [distribuidorInstance: distribuidorInstance])
@@ -117,21 +117,21 @@ class DistribuidorController {
 		redirect(action: "show", id: distribuidorInstance.id)
 	}
 	
-	def darBajaDistribuidor = {
+	def darBajaDistribuidor () {
 		params.max = Math.min(params.max ? params.int('max') : 10, 100)
 		[distribuidorInstanceList: Distribuidor.list(params), distribuidorInstanceTotal: Distribuidor.count()]
 	}
 	
-	def listarDistribuidor = {
+	def listarDistribuidor () {
 		redirect (action: "list")
 	}
 	
-	def mostrarDistribuidor = {
+	def mostrarDistribuidor () {
 		params.max = Math.min(params.max ? params.int('max') : 10, 100)
 		[distribuidorInstanceList: Distribuidor.list(params), distribuidorInstanceTotal: Distribuidor.count()]
 	}
 	
-	def modificarDistribuidor = {
+	def modificarDistribuidor () {
 		params.max = Math.min(params.max ? params.int('max') : 10, 100)
 		[distribuidorInstanceList: Distribuidor.list(params), distribuidorInstanceTotal: Distribuidor.count()]
 	}

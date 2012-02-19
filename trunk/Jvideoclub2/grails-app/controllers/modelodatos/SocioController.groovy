@@ -105,7 +105,7 @@ class SocioController {
 	def calcularSocioMayorService
 
 	
-	def crearAltaSocio = {
+	def crearAltaSocio () {
 		if (params.fechaNacimiento!=null){
 			def edadResult=true
 			edadResult=calcularSocioMayorService.getmayorEdad(params.fechaNacimiento)
@@ -118,11 +118,11 @@ class SocioController {
 		}
 	}
 	
-	def altaSocioMayor = {
+	def altaSocioMayor () {
 		[socioInstance: new Socio(params)]
 	}
 	
-	def saveSocioMayor = {
+	def saveSocioMayor () {
 		def socioInstance = new Socio(params)
 		if (!socioInstance.save(flush: true)) {
 			render(view: "altaSocioMayor", model: [socioInstance: socioInstance])
@@ -133,7 +133,7 @@ class SocioController {
 		redirect(action: "mostrar", id: socioInstance.id)
 	}
 	
-	def saveSocioMenor = {
+	def saveSocioMenor () {
 		def socioInstance = new Socio(params)
 		if (!socioInstance.save(flush: true)) {
 			render(view: "altaSocioMenor", model: [socioInstance: socioInstance])
@@ -144,21 +144,21 @@ class SocioController {
 		redirect(action: "mostrar", id: socioInstance.id)
 	}
 	
-	def altaSocioMenor = {
+	def altaSocioMenor () {
 		[socioInstance: new Socio(params)]
 	}
 	
-	def listarSocios = {
+	def listarSocios () {
 		params.max = Math.min(params.max ? params.int('max') : 10, 100)
 		[socioInstanceList: Socio.list(params), socioInstanceTotal: Socio.count()]
 	}
 	
-	def darBajaSocio = {
+	def darBajaSocio () {
 		params.max = Math.min(params.max ? params.int('max') : 10, 100)
 		[socioInstanceList: Socio.list(params), socioInstanceTotal: Socio.count()]
 	}
 	
-	def mostrar = {
+	def mostrar () {
 		def socioInstance = Socio.get(params.id)
 		if (!socioInstance) {
 			flash.message = message(code: 'default.not.found.message', args: [message(code: 'socio.label', default: 'Socio'), params.id])
@@ -168,12 +168,12 @@ class SocioController {
 		[socioInstance: socioInstance]
 	}
 	
-	def mostrarSocio = {
+	def mostrarSocio () {
 		params.max = Math.min(params.max ? params.int('max') : 10, 100)
 		[socioInstanceList: Socio.list(params), socioInstanceTotal: Socio.count()]
 	}
 	
-	def actualizarSocio = {
+	def actualizarSocio () {
 		def socioInstance = Socio.get(params.id)
 		if (!socioInstance) {
 			flash.message = message(code: 'default.not.found.message', args: [message(code: 'socio.label', default: 'Socio'), params.id])
@@ -203,7 +203,7 @@ class SocioController {
 		redirect(action: "modificarSocio", id: socioInstance.id)
 	}
 	
-	def modificar = {
+	def modificar () {
 		def socioInstance = Socio.get(params.id)
 		if (!socioInstance) {
 			flash.message = message(code: 'default.not.found.message', args: [message(code: 'socio.label', default: 'Socio'), params.id])
@@ -214,12 +214,12 @@ class SocioController {
 		[socioInstance: socioInstance]
 	}
 	
-	def modificarSocio = {
+	def modificarSocio () {
 		params.max = Math.min(params.max ? params.int('max') : 10, 100)
 		[socioInstanceList: Socio.list(params), socioInstanceTotal: Socio.count()]
 	}
 	
-	def imprimir = {
+	def imprimir () {
 		def socioInstance = Socio.get(params.id)
 		if (!socioInstance) {
 			flash.message = message(code: 'default.not.found.message', args: [message(code: 'socio.label', default: 'Socio'), params.id])
@@ -229,7 +229,7 @@ class SocioController {
 		[socioInstance: socioInstance]
 	}
 	
-	def imprimirCarnet = {
+	def imprimirCarnet () {
 		params.max = Math.min(params.max ? params.int('max') : 10, 100)
 		[socioInstanceList: Socio.list(params), socioInstanceTotal: Socio.count()]
 	}

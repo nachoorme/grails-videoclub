@@ -131,4 +131,15 @@ class PeliculaController {
 
 		[peliculaInstance: peliculaInstance]
 	}
+	
+	def crearListaPeliDis () {
+		if (params.distribuidor!=null){
+			if (edadResult) {
+				redirect (action:"altaSocioMayor")
+			}
+			else {
+				redirect (action:"altaSocioMenor")
+			}
+		}
+	} 
 }
