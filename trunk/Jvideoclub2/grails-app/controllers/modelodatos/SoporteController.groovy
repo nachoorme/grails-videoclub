@@ -4,7 +4,7 @@ import org.springframework.dao.DataIntegrityViolationException
 
 class SoporteController {
 
-    static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+    static allowedMethods = [save: "POST", update: "POST"]
 
     def index() {
         redirect(action: "list", params: params)
@@ -27,7 +27,7 @@ class SoporteController {
         }
 
 		flash.message = message(code: 'default.created.message', args: [message(code: 'soporte.label', default: 'Soporte'), soporteInstance.id])
-        redirect(action: "show", id: soporteInstance.id)
+        redirect(action: "mostrar", id: soporteInstance.id)
     }
 
     def show() {
@@ -79,7 +79,7 @@ class SoporteController {
         }
 
 		flash.message = message(code: 'default.updated.message', args: [message(code: 'soporte.label', default: 'Soporte'), soporteInstance.id])
-        redirect(action: "show", id: soporteInstance.id)
+        redirect(action: "mostrar", id: soporteInstance.id)
     }
 
     def delete() {
@@ -97,7 +97,33 @@ class SoporteController {
         }
         catch (DataIntegrityViolationException e) {
 			flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'soporte.label', default: 'Soporte'), params.id])
-            redirect(action: "show", id: params.id)
+            redirect(action: "mostrar", id: params.id)
         }
     }
+	
+	def darBajaSoporte() {
+		params.max = Math.min(params.max ? params.int('max') : 10, 100)
+		[soporteInstanceList: Soporte.list(params), soporteInstanceTotal: Soporte.count()]
+	}
+
+	def listarSoporte() {
+		params.max = Math.min(params.max ? params.int('max') : 10, 100)
+		[soporteInstanceList: Soporte.list(params), soporteInstanceTotal: Soporte.count()]
+	}
+
+	def mostrarSoporte() {
+		params.max = Math.min(params.max ? params.int('max') : 10, 100)
+		[soporteInstanceList: Soporte.list(params), soporteInstanceTotal: Soporte.count()]
+	}
+
+	def mostrar() {
+		def soporteInstance = Soporte.get(params.id)
+		if (!soporteInstance) {
+			flash.message = message(code: 'default.not.found.message', args: [message(code: 'soporte.label', default: 'Soporte'), params.id])
+			redirect(action: "list")
+			return
+		}
+
+		[soporteInstance: soporteInstance]
+	}
 }

@@ -11,7 +11,7 @@
             <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
         </div>
         <div class="body">
-            <h1><p align="center"><g:message  code="Eliga la película que desea dar de baja:"   args="[entityName]" /></h1>
+            <h1><p align="center"><g:message  code="Elija la película que desea dar de baja:"   args="[entityName]" /></h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
