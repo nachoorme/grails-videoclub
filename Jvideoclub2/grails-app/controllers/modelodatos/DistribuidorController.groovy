@@ -22,7 +22,7 @@ class DistribuidorController {
     def save() {
         def distribuidorInstance = new Distribuidor(params)
         if (!distribuidorInstance.save(flush: true)) {
-            render(view: "create", model: [distribuidorInstance: distribuidorInstance])
+            render(view: "crearAltaDistribuidor", model: [distribuidorInstance: distribuidorInstance])
             return
         }
 
@@ -56,7 +56,7 @@ class DistribuidorController {
         def distribuidorInstance = Distribuidor.get(params.id)
         if (!distribuidorInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'distribuidor.label', default: 'Distribuidor'), params.id])
-            redirect(action: "list")
+            redirect(action: "modificarDistribuidor")
             return
         }
 
@@ -86,14 +86,14 @@ class DistribuidorController {
         def distribuidorInstance = Distribuidor.get(params.id)
         if (!distribuidorInstance) {
 			flash.message = message(code: 'default.not.found.message', args: [message(code: 'distribuidor.label', default: 'Distribuidor'), params.id])
-            redirect(action: "list")
+            redirect(action: "darBajaDistribuidor")
             return
         }
 
         try {
             distribuidorInstance.delete(flush: true)
 			flash.message = message(code: 'default.deleted.message', args: [message(code: 'distribuidor.label', default: 'Distribuidor'), params.id])
-            redirect(action: "list")
+            redirect(action: "darBajaDistribuidor")
         }
         catch (DataIntegrityViolationException e) {
 			flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'distribuidor.label', default: 'Distribuidor'), params.id])

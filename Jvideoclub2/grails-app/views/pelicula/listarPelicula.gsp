@@ -15,7 +15,7 @@
 			</ul>
 		</div>
 		<div id="list-pelicula" class="content scaffold-list" role="main">
-			<h1>Mostrar listado de películas</h1>
+			<h1>Mostrar listado películas</h1>
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>

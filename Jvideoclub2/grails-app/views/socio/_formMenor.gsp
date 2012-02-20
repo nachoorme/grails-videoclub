@@ -49,7 +49,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: socioInstance, field: 'telefono', 'error')} required">
 	<label for="telefono">
-		<g:message code="socio.telefono.label" default="Telefono" />
+		<g:message code="socio.telefono.label" default="Teléfono" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:textField name="telefono" maxlength="9" pattern="${socioInstance.constraints.telefono.matches}" required="" value="${socioInstance?.telefono}"/>

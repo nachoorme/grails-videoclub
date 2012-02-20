@@ -115,7 +115,7 @@
 			
 				<g:if test="${socioInstance?.telefono}">
 				<li class="fieldcontain">
-					<span id="telefono-label" class="property-label"><g:message code="socio.telefono.label" default="Telefono" /></span>
+					<span id="telefono-label" class="property-label"><g:message code="socio.telefono.label" default="Teléfono" /></span>
 					
 						<span class="property-value" aria-labelledby="telefono-label"><g:fieldValue bean="${socioInstance}" field="telefono"/></span>
 					

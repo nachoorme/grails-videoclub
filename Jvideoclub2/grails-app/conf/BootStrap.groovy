@@ -5,6 +5,7 @@ class BootStrap {
     def init = { servletContext ->
 		def distribuidor1
 		def distribuidor2
+		def pelicula1
 		
 		if(!Socio.count()){
 			new Socio (dni: "53974233Z", nombre: "Bill", apellidos: "Gates",fechaRegistro:new Date(), direccion: "C/Gran Vía 25 2º D", poblacion: "Madrid", provincia: "Madrid", codigoPostal: "28004", telefono: "915557015", fechaNacimiento: new Date(), profesion: "Millonario",codigoCuentaCorriente: "20385892863244600095").save(failOnError: true)
@@ -18,7 +19,13 @@ class BootStrap {
 		}
 		
 		if(!Pelicula.count()){
-			new Pelicula (titulo: "Matrix", tipoCategoria: Categoria.OFERTA, tipoGenero: Genero.CienciaFiccion, calificacionMoral:"+18", idioma: Idioma.Ingles, precioBase: "2", distribuidor: distribuidor1).save(failOnError: true)
+			pelicula1 = new Pelicula (titulo: "Matrix", tipoCategoria: Categoria.OFERTA, tipoGenero: Genero.CienciaFiccion, calificacionMoral:"+18", idioma: Idioma.Ingles, precioBase: 2, distribuidor: distribuidor1).save(failOnError: true)
+		}
+		
+		if(!Soporte.count()){
+			new Soporte (pelicula: pelicula1, tipoSoporte: TipoSoporte.DVD).save(failOnError: true)
+			new Soporte (pelicula: pelicula1, tipoSoporte: TipoSoporte.CINTA).save(failOnError: true)
+			
 		}
     }
     def destroy = {
