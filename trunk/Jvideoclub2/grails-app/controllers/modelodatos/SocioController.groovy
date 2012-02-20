@@ -86,18 +86,18 @@ class SocioController {
         def socioInstance = Socio.get(params.id)
         if (!socioInstance) {
 			flash.message = message(code: 'default.not.found.message', args: [message(code: 'socio.label', default: 'Socio'), params.id])
-            redirect(action: "list")
+            redirect(action: "darBajaSocio")
             return
         }
 
         try {
             socioInstance.delete(flush: true)
 			flash.message = message(code: 'default.deleted.message', args: [message(code: 'socio.label', default: 'Socio'), params.id])
-            redirect(action: "list")
+            redirect(action: "darBajaSocio")
         }
         catch (DataIntegrityViolationException e) {
 			flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'socio.label', default: 'Socio'), params.id])
-            redirect(action: "show", id: params.id)
+            redirect(action: "mostrar", id: params.id)
         }
     }
 	
@@ -176,7 +176,7 @@ class SocioController {
 		def socioInstance = Socio.get(params.id)
 		if (!socioInstance) {
 			flash.message = message(code: 'default.not.found.message', args: [message(code: 'socio.label', default: 'Socio'), params.id])
-			redirect(action: "listarSocios")
+			redirect(action: "modificarSocio")
 			return
 		}
 
@@ -199,14 +199,14 @@ class SocioController {
 		}
 
 		flash.message = message(code: 'default.updated.message', args: [message(code: 'socio.label', default: 'Socio'), socioInstance.id])
-		redirect(action: "modificarSocio", id: socioInstance.id)
+		redirect(action: "mostrar", id: socioInstance.id)
 	}
 	
 	def modificar () {
 		def socioInstance = Socio.get(params.id)
 		if (!socioInstance) {
 			flash.message = message(code: 'default.not.found.message', args: [message(code: 'socio.label', default: 'Socio'), params.id])
-			redirect(action: "list")
+			redirect(action: "modificarSocio")
 			return
 		}
 

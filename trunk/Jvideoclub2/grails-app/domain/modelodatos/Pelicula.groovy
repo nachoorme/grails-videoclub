@@ -14,7 +14,7 @@ class Pelicula {
 	int duracion
 	String director
 	Idioma idioma
-	String precioBase ="2"
+	int precioBase = 2
 	String actores
 	String argumento
 	
@@ -27,7 +27,7 @@ class Pelicula {
 		duracion size:2..3, nullable: true
 		director nullable: true
 		idioma blank:false
-		precioBase size:1..1,blank:false,matches:"2"
+		precioBase size:1,blank:false
 		actores nullable: true
 		argumento nullable: true
 		

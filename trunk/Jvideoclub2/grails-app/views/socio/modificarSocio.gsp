@@ -30,7 +30,7 @@
 					
 						<g:sortableColumn property="fechaRegistro" title="${message(code: 'socio.fechaRegistro.label', default: 'Fecha Registro')}" />
 					
-						<g:sortableColumn property="telefono" title="${message(code: 'socio.telefono.label', default: 'Telefono')}" />
+						<g:sortableColumn property="telefono" title="${message(code: 'socio.telefono.label', default: 'Teléfono')}" />
 						
 						<g:sortableColumn property="tutor" title="${message(code: 'socio.tutor.label', default: 'Tutor')}" />
 						

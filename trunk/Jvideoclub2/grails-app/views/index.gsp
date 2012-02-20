@@ -104,11 +104,8 @@
 			   click on each to execute its default action:</p>
 
 			<div id="controller-list" role="navigation">
-				<h2>Available Controllers:</h2>
+				<h2>Funciones implementadas:</h2>
 				<ul>
-					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-						<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
-					</g:each>
 					<li class="controller"><g:link controller="socio" action="crearAltaSocio">Alta Socio</g:link></li>
 					<li class="controller"><g:link controller="socio" action="darBajaSocio">Baja Socio</g:link></li>
 					<li class="controller"><g:link controller="socio" action="listarSocios">Mostrar Listado Socios</g:link></li>
@@ -120,7 +117,16 @@
 				    <li class="controller"><g:link controller="distribuidor" action="listarDistribuidor">Mostrar Listado Distribuidoras</g:link></li>
 					<li class="controller"><g:link controller="distribuidor" action="mostrarDistribuidor">Mostrar Datos Distribuidora</g:link></li>
                     <li class="controller"><g:link controller="distribuidor" action="modificarDistribuidor">Modificar Datos Distribuidora</g:link></li>
-                    <li class="controller"><g:link controller="pelicula" action="crearListaPeliDis">Mostrar Películas Distribuidor</g:link></li>
+                    <li class="controller"><g:link controller="pelicula" action="altaPelicula">Alta Película</g:link></li>
+					<li class="controller"><g:link controller="pelicula" action="darBajaPelicula">Baja Película</g:link></li>
+					<li class="controller"><g:link controller="pelicula" action="listarPelicula">Mostrar Listado Películas</g:link></li>
+					<li class="controller"><g:link controller="pelicula" action="crearListaPeliDis">Mostrar Películas Distribuidor</g:link></li>
+					<li class="controller"><g:link controller="pelicula" action="mostrarPelicula">Mostrar Datos Película</g:link></li>
+					<li class="controller"><g:link controller="pelicula" action="modificarPelicula">Modificar Datos Película</g:link></li>
+				    <li class="controller"><g:link controller="soporte" action="darAltaSoporte">Alta Soporte Película</g:link></li>
+				    <li class="controller"><g:link controller="soporte" action="darBajaSoporte">Baja Soporte Película</g:link></li>
+				    <li class="controller"><g:link controller="soporte" action="listarSoporte">Mostrar Listado Soportes Películas</g:link></li>
+					<li class="controller"><g:link controller="soporte" action="mostrarSoporte">Mostrar Datos Soporte Película</g:link></li>
 					
 				</ul>
 			</div>

@@ -33,6 +33,10 @@
 					  	 <td><g:link action="mostrar" id="${peliculaInstance.id}">${fieldValue(bean: peliculaInstance, field: "id")}</g:link></td>
 					  </g:if>
 					  
+					  <g:if test="${accion == 'modificar'}">
+					  	 <td><g:link action="edit" id="${peliculaInstance.id}">${fieldValue(bean: peliculaInstance, field: "id")}</g:link></td>
+					  </g:if>
+					  
 						
 						
 						<td>${fieldValue(bean: peliculaInstance, field: "titulo")}</td>
