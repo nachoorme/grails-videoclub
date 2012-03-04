@@ -1,3 +1,8 @@
+/* AUTOR: Líder equipo, Resp. Desarrollo
+FECHA: 10/02/2012
+NOMBRE MODULO: Socio.groovy
+DESCRIPCIÓN: Dominio Base Datos Socio */
+
 package modelodatos
 
 import java.util.Date;

@@ -1,5 +1,5 @@
 import modelodatos.*;
-
+import security.*;
 class BootStrap {
 
     def init = { servletContext ->
@@ -26,6 +26,20 @@ class BootStrap {
 			new Soporte (pelicula: pelicula1, tipoSoporte: TipoSoporte.DVD).save(failOnError: true)
 			new Soporte (pelicula: pelicula1, tipoSoporte: TipoSoporte.CINTA).save(failOnError: true)
 			
+		}
+		
+		if (!Role.count()){
+			def adminRole = new Role(authority: 'ROLE_ADMIN').save(flush: true) 
+			def userRole = new Role(authority: 'ROLE_USER').save(flush: true)
+			
+			def testUser = new User(username: 'encargado', enabled: true, password: 'encargado') 
+			testUser.save(flush: true)
+			
+			UserRole.create testUser, adminRole, true
+			
+			assert User.count() == 1 
+			assert Role.count() == 2 
+			assert UserRole.count() == 1
 		}
     }
     def destroy = {

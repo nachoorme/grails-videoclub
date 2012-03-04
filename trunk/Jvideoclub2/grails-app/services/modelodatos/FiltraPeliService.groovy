@@ -1,3 +1,8 @@
+/* AUTOR: Resp. Soporte, Resp. Desarrollo
+FECHA: 17/02/2012
+NOMBRE MODULO: FiltraPeliService.groovy
+DESCRIPCIÓN: Servicio Película que devuelve la lista de películas de una distribuidora determinada */
+
 package modelodatos
 
 class FiltraPeliService {

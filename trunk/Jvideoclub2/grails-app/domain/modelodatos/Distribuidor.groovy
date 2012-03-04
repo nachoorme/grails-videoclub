@@ -1,3 +1,8 @@
+/* AUTOR: Resp. Soporte, Resp. Desarrollo
+FECHA: 17/02/2012
+NOMBRE MODULO: Distribuidor.groovy
+DESCRIPCIÓN: Dominio Base Datos Distribuidora */
+
 package modelodatos
 
 import java.util.Date;

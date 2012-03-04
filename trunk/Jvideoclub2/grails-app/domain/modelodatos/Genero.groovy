@@ -1,3 +1,8 @@
+/* AUTOR: Resp. Soporte, Resp. Desarrollo
+FECHA: 17/02/2012
+NOMBRE MODULO: Genero.groovy
+DESCRIPCIÓN: Dominio Enumerado atributo Género */
+
 package modelodatos
 
 public enum Genero {

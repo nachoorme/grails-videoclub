@@ -1,3 +1,8 @@
+/* AUTOR: Resp. Soporte, Resp. Desarrollo
+FECHA: 17/02/2012
+NOMBRE MODULO: Pelicula.groovy
+DESCRIPCIÓN: Dominio Base Datos Película */
+
 package modelodatos
 
 class Pelicula {

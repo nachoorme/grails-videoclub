@@ -1,3 +1,8 @@
+/* AUTOR: Líder equipo, Resp. Desarrollo
+FECHA: 10/02/2012
+NOMBRE MODULO: CalcularSocioMayorService.groovy
+DESCRIPCIÓN: Servicio Socio que calcula si la fecha introducida s mayor de 18 años */
+
 package modelodatos
 import groovy.time.*
 

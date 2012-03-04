@@ -60,7 +60,7 @@
 <div class="fieldcontain ${hasErrors(bean: socioInstance, field: 'tutor', 'error')} ">
 	<label for="tutor">
 		<g:message code="socio.tutor.label" default="Tutor" />
-		
+		<span class="required-indicator">*</span>
 	</label>
 	<g:select id="tutor" name="tutor.id" from="${modelodatos.Socio.list()}" optionKey="id" value="${socioInstance?.tutor?.id}" class="many-to-one" noSelection="['null': '']"/>
 </div>

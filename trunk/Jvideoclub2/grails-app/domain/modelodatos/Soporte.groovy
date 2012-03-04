@@ -1,3 +1,9 @@
+/* AUTOR: Resp. Soporte, Resp. Desarrollo
+FECHA: 17/02/2012
+NOMBRE MODULO: Soporte.groovy
+DESCRIPCIÓN: Dominio Base Datos Soporte */
+
+
 package modelodatos
 
 class Soporte {
