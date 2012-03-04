@@ -11,7 +11,17 @@ import org.junit.*
 @TestFor(BuscaSocioService)
 class BuscaSocioServiceTests {
 
-    void testSomething() {
-        fail "Implement me"
+	def buscaSocioService
+	
+    void testBuscaDNI() {
+       
+
+		def user = buscaSocioService.buscaIdPorDni("12345678");
+		
+		assert user==null;
+		new Socio (dni: "03563238H", nombre: "Mickey", apellidos: "Mouse",fechaRegistro:new Date(), direccion: "DisneyLand", poblacion: "Paris", provincia: "Paris", codigoPostal: "28004", telefono: "915792202", fechaNacimiento: new Date(), profesion: "Dibujo Animado",codigoCuentaCorriente: "20383552863244600022").save(failOnError: true)
+		user = buscaSocioService.buscaIdPorDni("03563238H");
+		
+		assert user!=null
     }
 }

@@ -105,21 +105,5 @@
 	</label>
 	<g:select id="distribuidor" name="distribuidor.id" from="${modelodatos.Distribuidor.list()}" optionKey="id" required="" value="${peliculaInstance?.distribuidor?.id}" class="many-to-one"/>
 </div>
-
-<div class="fieldcontain ${hasErrors(bean: peliculaInstance, field: 'soportes', 'error')} ">
-	<label for="soportes">
-		<g:message code="pelicula.soportes.label" default="Soportes" />
-		
-	</label>
-	
-<ul class="one-to-many">
-<g:each in="${peliculaInstance?.soportes?}" var="s">
-    <li><g:link controller="soporte" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></li>
-</g:each>
-<li class="add">
-<g:link controller="soporte" action="create" params="['pelicula.id': peliculaInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'soporte.label', default: 'Soporte')])}</g:link>
-</li>
-</ul>
-
 </div>
 

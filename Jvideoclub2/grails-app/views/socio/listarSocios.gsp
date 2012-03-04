@@ -10,7 +10,7 @@
 		<a href="#list-socio" class="skip" tabindex="-1"><g:message code="Mostrar listado socios" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+
 			</ul>
 		</div>
 		<div id="list-socio" class="content scaffold-list" role="main">
@@ -21,7 +21,7 @@
 			<table>
 				<thead>
 					<tr>
-					    <g:sortableColumn property="id" title="${message(code: 'Número de Socio', default: 'Id')}" />
+					    <g:sortableColumn property="id" title="${message(code: 'Número de Socio', default: 'Número de Socio')}" />
 					
 						<g:sortableColumn property="dni" title="${message(code: 'socio.dni.label', default: 'Dni')}" />
 					

@@ -1,3 +1,8 @@
+/* AUTOR: Resp. Soporte, Resp. Desarrollo
+FECHA: 17/02/2012
+NOMBRE MODULO: Pelicula Controller.groovy
+DESCRIPCIÓN: Controlador Datos Película */
+
 package modelodatos
 
 import org.springframework.dao.DataIntegrityViolationException
@@ -6,19 +11,28 @@ class PeliculaController {
 
 	static allowedMethods = [save: "POST", update: "POST"]
 
+	
+	/* NOMBRE FUNCIÓN: index
+	DESCRIPCIÓN: Función implementa la acción mostrada en el índice. */
 	def index() {
 		redirect(action: "list", params: params)
 	}
 
+	/* NOMBRE FUNCIÓN: list
+	DESCRIPCIÓN: Función lista películas (básica). */
 	def list() {
 		params.max = Math.min(params.max ? params.int('max') : 10, 100)
 		[peliculaInstanceList: Pelicula.list(params), peliculaInstanceTotal: Pelicula.count()]
 	}
 
+	/* NOMBRE FUNCIÓN: create
+	DESCRIPCIÓN: Función crear películas (básica). */
 	def create() {
 		[peliculaInstance: new Pelicula(params)]
 	}
 
+	/* NOMBRE FUNCIÓN: save
+	DESCRIPCIÓN: Función guarda datos películas (básica). */
 	def save() {
 		def peliculaInstance = new Pelicula(params)
 		if (!peliculaInstance.save(flush: true)) {
@@ -30,6 +44,8 @@ class PeliculaController {
 		redirect(action: "mostrar", id: peliculaInstance.id)
 	}
 
+	/* NOMBRE FUNCIÓN: show
+	DESCRIPCIÓN: Función mostrar (básica). */
 	def show() {
 		def peliculaInstance = Pelicula.get(params.id)
 		if (!peliculaInstance) {
@@ -41,6 +57,8 @@ class PeliculaController {
 		[peliculaInstance: peliculaInstance]
 	}
 
+	/* NOMBRE FUNCIÓN: edit
+	DESCRIPCIÓN: Función editar películas (básica). */
 	def edit() {
 		def peliculaInstance = Pelicula.get(params.id)
 		if (!peliculaInstance) {
@@ -52,6 +70,8 @@ class PeliculaController {
 		[peliculaInstance: peliculaInstance]
 	}
 
+	/* NOMBRE FUNCIÓN: update
+	DESCRIPCIÓN: Función actualizar datos películas (básica). */
 	def update() {
 		def peliculaInstance = Pelicula.get(params.id)
 		if (!peliculaInstance) {
@@ -82,6 +102,8 @@ class PeliculaController {
 		redirect(action: "mostrar", id: peliculaInstance.id)
 	}
 
+	/* NOMBRE FUNCIÓN: delete
+	DESCRIPCIÓN: Función eliminar películas (básica). */
 	def delete() {
 		def peliculaInstance = Pelicula.get(params.id)
 		if (!peliculaInstance) {
@@ -102,26 +124,36 @@ class PeliculaController {
 	}
 	
 	def filtraPeliService
-	
+
+	/* NOMBRE FUNCIÓN: altaPelicula
+	DESCRIPCIÓN: Función dar Alta películas, recibe datos y crea. */
 	def altaPelicula() {
 		[peliculaInstance: new Pelicula(params)]
 	}
 	
+	/* NOMBRE FUNCIÓN: darBajaPelicula
+	DESCRIPCIÓN: Función que muestra el listado de películas para poder eliminarlos. */
 	def darBajaPelicula() {
 		params.max = Math.min(params.max ? params.int('max') : 10, 100)
 		[peliculaInstanceList: Pelicula.list(params), peliculaInstanceTotal: Pelicula.count()]
 	}
 	
+	/* NOMBRE FUNCIÓN: listarPelicula
+	DESCRIPCIÓN: Función que muestra el listado completo de películas. */
 	def listarPelicula() {
 		params.max = Math.min(params.max ? params.int('max') : 10, 100)
 		[peliculaInstanceList: Pelicula.list(params), peliculaInstanceTotal: Pelicula.count()]
 	}
 	
+	/* NOMBRE FUNCIÓN: mostrarPelicula
+	DESCRIPCIÓN: Función que muestra el listado de películas para poder mostrar los datos de uno concreto. */
 	def mostrarPelicula() {
 		params.max = Math.min(params.max ? params.int('max') : 10, 100)
 		[peliculaInstanceList: Pelicula.list(params), peliculaInstanceTotal: Pelicula.count()]
 	}
 	
+	/* NOMBRE FUNCIÓN: mostrar
+	DESCRIPCIÓN: Función que muestra los datos de un película concreto. */
 	def mostrar() {
 		def peliculaInstance = Pelicula.get(params.id)
 		if (!peliculaInstance) {
@@ -133,11 +165,15 @@ class PeliculaController {
 		[peliculaInstance: peliculaInstance]
 	}
 	
+	/* NOMBRE FUNCIÓN: modificarPelicula
+	DESCRIPCIÓN: Función que muestra el listado de películas para poder modificarlos. */
 	def modificarPelicula () {
 		params.max = Math.min(params.max ? params.int('max') : 10, 100)
 		[peliculaInstanceList: Pelicula.list(params), peliculaInstanceTotal: Pelicula.count()]
 	}
 	
+	/* NOMBRE FUNCIÓN: crearListaPeliDis
+	DESCRIPCIÓN: Función que muestra el listado de películas suministradas por una distribuidora concreta. */
 	def crearListaPeliDis () {
 		println params
 		if (params.distribuidor!=null){

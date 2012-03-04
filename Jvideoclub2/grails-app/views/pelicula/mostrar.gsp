@@ -11,7 +11,6 @@
 		<a href="#show-pelicula" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>				
 			</ul>
 		</div>
 		<div id="show-pelicula" class="content scaffold-show" role="main">
@@ -133,21 +132,11 @@
 				<li class="fieldcontain">
 					<span id="distribuidor-label" class="property-label"><g:message code="pelicula.distribuidor.label" default="Distribuidor" /></span>
 					
-						<span class="property-value" aria-labelledby="distribuidor-label"><g:link controller="distribuidor" action="show" id="${peliculaInstance?.distribuidor?.id}">${peliculaInstance?.distribuidor?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="argumento-label"><g:fieldValue bean="${peliculaInstance}" field="distribuidor"/></span>
 					
 				</li>
 				</g:if>
-			
-				<g:if test="${peliculaInstance?.soportes}">
-				<li class="fieldcontain">
-					<span id="soportes-label" class="property-label"><g:message code="pelicula.soportes.label" default="Soportes" /></span>
-					
-						<g:each in="${peliculaInstance.soportes}" var="s">
-						<span class="property-value" aria-labelledby="soportes-label"><g:link controller="soporte" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></span>
-						</g:each>
-					
-				</li>
-				</g:if>
+
 			
 			</ol>
 

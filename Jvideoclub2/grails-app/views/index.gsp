@@ -75,26 +75,17 @@
 		</style>
 	</head>
 	<body>
+	
 		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div id="status" role="complementary">
-			<h1>Application Status</h1>
+			<h1>Estadísticas</h1>
 			<ul>
-				<li>App version: <g:meta name="app.version"/></li>
-				<li>Grails version: <g:meta name="app.grails.version"/></li>
-				<li>Groovy version: ${org.codehaus.groovy.runtime.InvokerHelper.getVersion()}</li>
-				<li>JVM version: ${System.getProperty('java.version')}</li>
-				<li>Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</li>
-				<li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
-				<li>Domains: ${grailsApplication.domainClasses.size()}</li>
-				<li>Services: ${grailsApplication.serviceClasses.size()}</li>
-				<li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>
+				<li>Socios regisgrados: <g:countsocio /></li>
+				<li>Películas disponibles: <g:countpelicula /></li>
+				<li>Distribuidoras: <g:countdistribuidor /></li>
+				
 			</ul>
-			<h1>Installed Plugins</h1>
-			<ul>
-				<g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
-					<li>${plugin.name} - ${plugin.version}</li>
-				</g:each>
-			</ul>
+			
 		</div>
 		<div id="page-body" role="main">
 			<h1>Bienvenido a J-Videoclub</h1>
@@ -103,33 +94,7 @@
 			   content you may choose. Below is a list of controllers that are currently deployed in this application,
 			   click on each to execute its default action:</p>
 
-			<div id="controller-list" role="navigation">
-				<h2>Funciones implementadas:</h2>
-				<ul>
-					<li class="controller"><g:link controller="socio" action="crearAltaSocio">Alta Socio</g:link></li>
-					<li class="controller"><g:link controller="socio" action="darBajaSocio">Baja Socio</g:link></li>
-					<li class="controller"><g:link controller="socio" action="listarSocios">Mostrar Listado Socios</g:link></li>
-					<li class="controller"><g:link controller="socio" action="mostrarSocio">Mostrar Socio</g:link></li>
-					<li class="controller"><g:link controller="socio" action="modificarSocio">Modificar Datos Socio</g:link></li>
-				    <li class="controller"><g:link controller="socio" action="imprimirCarnet">Imprimir Carnet Socio</g:link></li>
-				    <li class="controller"><g:link controller="distribuidor" action="crearAltaDistribuidor">Alta Distribuidora</g:link></li>
-				    <li class="controller"><g:link controller="distribuidor" action="darBajaDistribuidor">Baja Distribuidora</g:link></li>
-				    <li class="controller"><g:link controller="distribuidor" action="listarDistribuidor">Mostrar Listado Distribuidoras</g:link></li>
-					<li class="controller"><g:link controller="distribuidor" action="mostrarDistribuidor">Mostrar Datos Distribuidora</g:link></li>
-                    <li class="controller"><g:link controller="distribuidor" action="modificarDistribuidor">Modificar Datos Distribuidora</g:link></li>
-                    <li class="controller"><g:link controller="pelicula" action="altaPelicula">Alta Película</g:link></li>
-					<li class="controller"><g:link controller="pelicula" action="darBajaPelicula">Baja Película</g:link></li>
-					<li class="controller"><g:link controller="pelicula" action="listarPelicula">Mostrar Listado Películas</g:link></li>
-					<li class="controller"><g:link controller="pelicula" action="crearListaPeliDis">Mostrar Películas Distribuidor</g:link></li>
-					<li class="controller"><g:link controller="pelicula" action="mostrarPelicula">Mostrar Datos Película</g:link></li>
-					<li class="controller"><g:link controller="pelicula" action="modificarPelicula">Modificar Datos Película</g:link></li>
-				    <li class="controller"><g:link controller="soporte" action="darAltaSoporte">Alta Soporte Película</g:link></li>
-				    <li class="controller"><g:link controller="soporte" action="darBajaSoporte">Baja Soporte Película</g:link></li>
-				    <li class="controller"><g:link controller="soporte" action="listarSoporte">Mostrar Listado Soportes Películas</g:link></li>
-					<li class="controller"><g:link controller="soporte" action="mostrarSoporte">Mostrar Datos Soporte Película</g:link></li>
-					
-				</ul>
-			</div>
+			
 		</div>
 	</body>
 </html>

@@ -9,7 +9,6 @@
     </head>
     <body>
         <div class="nav">
-            <span class="menuButton"><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></span>
         </div>
         <div class="body">
             <h1><p align="center"><g:message  code="Elija el socio del que quiere imprimir su carnet:"   args="[entityName]" /></h1>
@@ -21,7 +20,7 @@
                     <thead>
                         <tr>
                         
-					    <g:sortableColumn property="id" title="${message(code: 'Número de Socio', default: 'Id')}" />
+					    <g:sortableColumn property="id" title="${message(code: 'Número de Socio', default: 'Número de Socio')}" />
 					
 						<g:sortableColumn property="dni" title="${message(code: 'socio.dni.label', default: 'Dni')}" />
 					

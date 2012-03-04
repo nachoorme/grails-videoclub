@@ -11,7 +11,7 @@
 		<a href="#list-distribuidor" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div class="nav" role="navigation">
 			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+
 			</ul>
 		</div>
 		<div id="list-distribuidor" class="content scaffold-list" role="main">
@@ -23,7 +23,7 @@
 				<thead>
 					<tr>
 					
-				       <g:sortableColumn property="id" title="${message(code: 'Código distribuidora', default: 'Id')}" />
+				       <g:sortableColumn property="id" title="${message(code: 'Código distribuidora', default: 'Código distribuidora')}" />
 						
 						<g:sortableColumn property="nombre" title="${message(code: 'distribuidor.nombre.label', default: 'Nombre')}" />
 					
