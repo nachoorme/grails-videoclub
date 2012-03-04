@@ -80,19 +80,18 @@
 		<div id="status" role="complementary">
 			<h1>Estadísticas</h1>
 			<ul>
-				<li>Socios regisgrados: <g:countsocio /></li>
+				<li>Socios registrados: <g:countsocio /></li>
+				<li>Distribuidoras contratadas: <g:countdistribuidor /></li>
 				<li>Películas disponibles: <g:countpelicula /></li>
-				<li>Distribuidoras: <g:countdistribuidor /></li>
-				
 			</ul>
 			
 		</div>
 		<div id="page-body" role="main">
 			<h1>Bienvenido a J-Videoclub</h1>
-			<p>Congratulations, you have successfully started your first J-Videoclub application! At the moment
-			   this is the default page, feel free to modify it to either redirect to a controller or display whatever
-			   content you may choose. Below is a list of controllers that are currently deployed in this application,
-			   click on each to execute its default action:</p>
+			<p>Felicidades, acabas de iniciar sesión en la aplicación J-Videoclub! De momento
+			   esta es la página por defecto. En la parte superior encontrarás la barra de menú que te permitirá
+			   acceder a las diferentes funcionalidades implementadas hasta el momento, en un futuro el sistema
+			   estará implementado en su totalidad. Disfrutela!</p>
 
 			
 		</div>
