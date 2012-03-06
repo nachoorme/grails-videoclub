@@ -22,10 +22,10 @@ class Soporte {
 	float getPrecioAlquiler (){
 		float resultado = pelicula.precioBase;
 		
-		if (pelicula.tipoGenero == Categoria.NOVEDAD){
+		if (pelicula.tipoCategoria == Categoria.NOVEDAD){
 			resultado += pelicula.precioBase*0.3;
 		}
-		if (pelicula.tipoGenero == Categoria.NORMAL){
+		if (pelicula.tipoCategoria == Categoria.NORMAL){
 			resultado += pelicula.precioBase*0.2;
 		}
 		
