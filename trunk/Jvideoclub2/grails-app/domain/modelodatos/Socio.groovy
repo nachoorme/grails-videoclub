@@ -24,7 +24,7 @@ class Socio {
     Socio tutor	
 	
     static constraints = {
-		dni size:9..9,unique:true,blank:false,matches: "[0-9]{8}[A-Z]"
+		dni size:9..9,unique:true,blank:false,matches: "[0-9|X-Z]{1}[0-9]{7}[A-Z]"
 		nombre  size:3..15,blank:false
 		apellidos blank:false
 		fechaRegistro blank:false

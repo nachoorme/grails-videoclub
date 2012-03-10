@@ -6,6 +6,21 @@
 		<meta name="layout" content="main">
 		<g:set var="entityName" value="${message(code: 'pelicula.label', default: 'Pelicula')}" />
 		<title><g:message code="Mostrar Película" args="[entityName]" /></title>
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			
+				 $.ajax({
+				      url: "http://www.imdbapi.com/?t=${peliculaInstance?.titulo}",
+				      dataType: 'jsonp',
+				      success: function(data) {
+				    
+				        $("#caratula").attr("src","${createLink(controller:'infoPeli',action:'index')}/?title="+data.Poster);
+				        
+				      },
+				      
+				    });
+			   
+		</script>
 	</head>
 	<body>
 		<a href="#show-pelicula" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -18,6 +33,10 @@
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
+			<div style="float:right; width=320px;height=465px;">
+						<img id="caratula" src="" width="60%" height="60%"/>
+			</div>
+			<div>
 			<ol class="property-list pelicula">
 			
 				<g:if test="${peliculaInstance?.titulo}">
@@ -139,7 +158,8 @@
 
 			
 			</ol>
-
+			</div>
 		</div>
+		
 	</body>
 </html>
