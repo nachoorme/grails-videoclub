@@ -92,8 +92,6 @@
 			   esta es la página por defecto. En la parte superior encontrarás la barra de menú que te permitirá
 			   acceder a las diferentes funcionalidades implementadas hasta el momento, en un futuro el sistema
 			   estará implementado en su totalidad. Disfrutela!</p>
-
-			
 		</div>
 	</body>
 </html>
