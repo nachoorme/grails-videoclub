@@ -24,7 +24,7 @@
 			
 			<g:if test="${distribuidorInstance?.id}">
 				<li class="fieldcontain">
-					<span id="id-label" class="property-label"><g:message code="Código distribuidora" default="Id" /></span>
+					<span id="id-label" class="property-label"><g:message code="Código" default="Código" /></span>
 					
 						<span class="property-value" aria-labelledby="id-label"><g:fieldValue bean="${distribuidorInstance}" field="id"/></span>
 					
