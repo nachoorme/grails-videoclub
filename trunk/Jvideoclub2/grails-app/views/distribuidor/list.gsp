@@ -23,7 +23,7 @@
 				<thead>
 					<tr>
 					
-				       <g:sortableColumn property="id" title="${message(code: 'Código distribuidora', default: 'Código distribuidora')}" />
+				       <g:sortableColumn property="id" title="${message(code: 'Código', default: 'Código')}" />
 						
 						<g:sortableColumn property="nombre" title="${message(code: 'distribuidor.nombre.label', default: 'Nombre')}" />
 					
@@ -33,7 +33,6 @@
 					
 						<g:sortableColumn property="fechaFinContrato" title="${message(code: 'distribuidor.fechaFinContrato.label', default: 'Fecha Fin Contrato')}" />
 					
-						<g:sortableColumn property="telefono" title="${message(code: 'distribuidor.telefono.label', default: 'Teléfono')}" />
 					
 						<g:sortableColumn property="e_mail" title="${message(code: 'distribuidor.e_mail.label', default: 'e_mail')}" />
 					
@@ -52,8 +51,6 @@
 						<td><g:formatDate date="${distribuidorInstance.fechaInicioContrato}" /></td>
 					
 						<td><g:formatDate date="${distribuidorInstance.fechaFinContrato}" /></td>
-					
-						<td>${fieldValue(bean: distribuidorInstance, field: "telefono")}</td>
 					
 						<td>${fieldValue(bean: distribuidorInstance, field: "e_mail")}</td>
 					
