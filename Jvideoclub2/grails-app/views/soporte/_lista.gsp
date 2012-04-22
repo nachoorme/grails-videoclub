@@ -2,11 +2,6 @@
 		<table>
 				<thead>
 					<tr>
-					
-					
-					
-						
-						
 						<g:sortableColumn property="id" title="Código soporte" />
 						
 						<th><g:message code="soporte.pelicula.label" default="Título Película" /></th>

@@ -41,6 +41,18 @@
 					<li><a href="${createLink(controller:"soporte", action:"mostrarSoporte") }">Ficha</a></li>					
 			   </ul>
 		  </li>
+		  <li><a href="#" >Alquiler</a>
+				<ul>
+					<li><a href="${createLink(controller:"alquiler", action:"create") }">Aquilar película</a></li>
+			        <li><a href="${createLink(controller:"alquiler", action:"devolucion") }">Devolver película</a></li>	
+									
+			   </ul>
+		  </li>
+		  <li><a href="#" >Factura</a>
+				<ul>
+					<li><a href="${createLink(controller:"factura", action:"facturaspendientes") }">Pagar facturas</a></li>									
+			   </ul>
+		  </li>
 			<li><a href="${createLink(controller:"logout")}">Salir</a></li>
 		</ul>
 	</div>

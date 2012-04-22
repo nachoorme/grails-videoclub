@@ -14,6 +14,7 @@ class Soporte {
 	
 	static belongsTo = [pelicula:Pelicula]
 	Pelicula pelicula;
+	boolean estaDisponible=true;
 	
 	TipoSoporte tipoSoporte  //CD o DVD
 	
@@ -37,6 +38,10 @@ class Soporte {
 		}
 		
 		return resultado;
+	}
+	
+	String toString(){
+		return "${pelicula}-${tipoSoporte}-${id}";
 	}
 	
 }
