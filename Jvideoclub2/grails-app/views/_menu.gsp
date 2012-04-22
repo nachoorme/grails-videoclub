@@ -45,12 +45,17 @@
 				<ul>
 					<li><a href="${createLink(controller:"alquiler", action:"create") }">Aquilar película</a></li>
 			        <li><a href="${createLink(controller:"alquiler", action:"devolucion") }">Devolver película</a></li>	
-									
+					<li><a href="${createLink(controller:"factura", action:"facturaspendientes") }">Pagar facturas</a></li>					
 			   </ul>
 		  </li>
-		  <li><a href="#" >Factura</a>
+		  
+		  <li><a href="#" >Informes</a>
 				<ul>
-					<li><a href="${createLink(controller:"factura", action:"facturaspendientes") }">Pagar facturas</a></li>									
+				<li><a href="${createLink(controller:"informes", action:"listaDistribuidor") }">Soporte por distribuidor</a></li>
+				<li><a href="${createLink(controller:"djReport", params:[report:'todasLasPeliculas']) }">Películas</a></li>
+				<li><a href="${createLink(controller:"djReport", params:[report:'todosLosSocios']) }">Socios</a></li>
+				<li><a href="${createLink(controller:"djReport", params:[report:'contratosDeMantenimiento']) }">Contratos de mantenimiento</a></li>
+				<li><a href="${createLink(controller:"djReport", params:[report:'alquileresPendientes']) }">Alquileres pendientes</a></li>														
 			   </ul>
 		  </li>
 			<li><a href="${createLink(controller:"logout")}">Salir</a></li>

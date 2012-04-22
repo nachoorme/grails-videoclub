@@ -6,7 +6,9 @@ DESCRIPCIÓN: Dominio Base Datos Película */
 package modelodatos
 
 class Pelicula {
-
+	static reportable = [
+		:
+		]
 	static hasMany = [soportes: Soporte]
 	static belongsTo = [distribuidor:Distribuidor]
 	

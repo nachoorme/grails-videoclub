@@ -10,7 +10,7 @@ class Alquiler {
 		fechaEntrega nullable:true
 	}
 	
-	
+	static reportable = [:]
 	static belongsTo = [socio:Socio,soporte:Soporte]
 	
 	Date fechaAlquiler
