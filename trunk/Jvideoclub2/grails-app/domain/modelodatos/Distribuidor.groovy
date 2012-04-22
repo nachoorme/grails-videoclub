@@ -22,6 +22,7 @@ class Distribuidor {
 	Date fechaFinContrato
 	String e_mail
 	
+	static reportable = [:]
     static constraints = {
 		nombre size:5..15,unique:true,blank:false
 		cif  size:9..9,unique:true,blank:false,matches: "[0-9]{8}[A-Z]"

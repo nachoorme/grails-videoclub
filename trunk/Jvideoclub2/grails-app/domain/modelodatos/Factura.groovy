@@ -1,7 +1,7 @@
 package modelodatos
 
 class Factura {
-
+	static reportable = [:]
     static constraints = {
     }
 	

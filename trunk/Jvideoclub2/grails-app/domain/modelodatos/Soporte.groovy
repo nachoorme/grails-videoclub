@@ -7,7 +7,7 @@ DESCRIPCIÓN: Dominio Base Datos Soporte */
 package modelodatos
 
 class Soporte {
-
+	static reportable = [:]
     static constraints = {
     }
 	
