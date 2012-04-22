@@ -65,8 +65,8 @@ class BootStrap {
 		}
 		
 		if(!Soporte.count()){
-			new Soporte (pelicula: pelicula1, tipoSoporte: TipoSoporte.DVD).save(failOnError: true)
-			new Soporte (pelicula: pelicula1, tipoSoporte: TipoSoporte.CINTA).save(failOnError: true)
+			new Soporte (pelicula: pelicula1, tipoSoporte: TipoSoporte.DVD, estaDisponible:false).save(failOnError: true)
+			new Soporte (pelicula: pelicula1, tipoSoporte: TipoSoporte.CINTA, estaDisponible:false).save(failOnError: true)
 			new Soporte (pelicula: pelicula2, tipoSoporte: TipoSoporte.DVD).save(failOnError: true)
 			new Soporte (pelicula: pelicula2, tipoSoporte: TipoSoporte.CINTA).save(failOnError: true)
 			new Soporte (pelicula: pelicula2, tipoSoporte: TipoSoporte.DVD).save(failOnError: true)
