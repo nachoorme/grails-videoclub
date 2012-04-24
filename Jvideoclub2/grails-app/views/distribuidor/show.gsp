@@ -52,7 +52,7 @@
 				<li class="fieldcontain">
 					<span id="fechaInicioContrato-label" class="property-label"><g:message code="distribuidor.fechaInicioContrato.label" default="Fecha Inicio Contrato" /></span>
 					
-						<span class="property-value" aria-labelledby="fechaInicioContrato-label"><g:formatDate date="${distribuidorInstance?.fechaInicioContrato}" /></span>
+						<span class="property-value" aria-labelledby="fechaInicioContrato-label"><g:formatDate date="${distribuidorInstance?.fechaInicioContrato}" format="dd-MM-yyyy"/></span>
 					
 				</li>
 				</g:if>
@@ -61,7 +61,7 @@
 				<li class="fieldcontain">
 					<span id="fechaFinContrato-label" class="property-label"><g:message code="distribuidor.fechaFinContrato.label" default="Fecha Fin Contrato" /></span>
 					
-						<span class="property-value" aria-labelledby="fechaFinContrato-label"><g:formatDate date="${distribuidorInstance?.fechaFinContrato}" /></span>
+						<span class="property-value" aria-labelledby="fechaFinContrato-label"><g:formatDate date="${distribuidorInstance?.fechaFinContrato}" format="dd-MM-yyyy"/></span>
 					
 				</li>
 				</g:if>

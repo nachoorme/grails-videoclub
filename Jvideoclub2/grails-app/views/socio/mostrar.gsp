@@ -61,7 +61,7 @@
 				<li class="fieldcontain">
 					<span id="fechaNacimiento-label" class="property-label"><g:message code="socio.fechaNacimiento.label" default="Fecha Nacimiento" /></span>
 					
-						<span class="property-value" aria-labelledby="fechaNacimiento-label"><g:formatDate date="${socioInstance?.fechaNacimiento}" /></span>
+						<span class="property-value" aria-labelledby="fechaNacimiento-label"><g:formatDate date="${socioInstance?.fechaNacimiento}" format="dd-MM-yyyy"/></span>
 					
 				</li>
 				</g:if>
@@ -70,7 +70,7 @@
 				<li class="fieldcontain">
 					<span id="fechaRegistro-label" class="property-label"><g:message code="socio.fechaRegistro.label" default="Fecha Registro" /></span>
 					
-						<span class="property-value" aria-labelledby="fechaRegistro-label"><g:formatDate date="${socioInstance?.fechaRegistro}" /></span>
+						<span class="property-value" aria-labelledby="fechaRegistro-label"><g:formatDate date="${socioInstance?.fechaRegistro}" format="dd-MM-yyyy" /></span>
 					
 				</li>
 				</g:if>

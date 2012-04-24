@@ -154,7 +154,7 @@ def buscaSocioService
 		
 		alquiler.save(flush:true);
 		flash.message = "La película ha sido devuelta"
-		redirect (action:"devolverPelicula",params:['socio.id':alquiler.socio.id]);
+		redirect (action:"devolverPelicula",params:['id':alquiler.socio.id]);
 	}
 	
 	def devolverTodas(){

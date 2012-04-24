@@ -133,6 +133,17 @@ class FacturaController {
 			factura.save(flush:true);
 		}
 		flash.message = "Facturas pagadas"
+		redirect(action: "facturaspendientes")
+	}
+	
+	def cargoCuenta(){
+		def socio = Socio.get(params.id)
+		def listaFacturasPendientes = Factura.findAllBySocioAndEstaPendiente(socio,true)
+		listaFacturasPendientes.each{factura ->
+			factura.estaPendiente=false;
+			factura.save(flush:true);
+		}
+		flash.message = "Facturas pagadas"
 		redirect(controller: "alquiler", action: "create")
 	}
 	

@@ -62,7 +62,7 @@
 				<li class="fieldcontain">
 					<span id="fechaRegistro-label" class="property-label"><g:message code="socio.fechaRegistro.label" default="Fecha Registro" /></span>
 					
-						<span class="property-value" aria-labelledby="fechaRegistro-label"><g:formatDate date="${socioInstance?.fechaRegistro}" /></span>
+						<span class="property-value" aria-labelledby="fechaRegistro-label"><g:formatDate date="${socioInstance?.fechaRegistro}" format="dd-MM-yyyy"/></span>
 					
 				</li>
 				</g:if>
@@ -91,7 +91,7 @@
 			
 		</div>
 		<div class="buttons">
-                    <span class="button"><g:submitButton name="Imprimir" value="Imprimir" onclick="javascript:if (window.print){window.print();}"/></span>
-                </div>
+           <span class="button"><g:submitButton name="Imprimir" value="Imprimir" onclick="javascript:if (window.print){window.print();}"/></span>
+        </div>
 	</body>
 </html>

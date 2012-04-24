@@ -34,7 +34,7 @@
 					
 						<td>${fieldValue(bean: soporteInstance, field: "tipoSoporte")}</td>
 						
-						<td>${fieldValue(bean: soporteInstance, field: "precioAlquiler")}</td>
+						<td><g:formatNumber number="${soporteInstance.precioAlquiler}" type="currency" currencyCode="EUR" /></td>
 					
 					</tr>
 				</g:each>

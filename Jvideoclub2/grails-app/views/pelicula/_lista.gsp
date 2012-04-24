@@ -47,7 +47,7 @@
 					
 						<td>${fieldValue(bean: peliculaInstance, field: "idioma")}</td>
 					
-						<td>${fieldValue(bean: peliculaInstance, field: "precioBase")}</td>
+						<td><g:formatNumber number="${peliculaInstance.precioBase}" type="currency" currencyCode="EUR" /></td>
 					
 					</tr>
 				</g:each>
