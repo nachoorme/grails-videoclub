@@ -51,11 +51,13 @@
 		  
 		  <li><a href="#" >Informes</a>
 				<ul>
-				<li><a href="${createLink(controller:"informes", action:"listaDistribuidor") }">Soporte por distribuidor</a></li>
-				<li><a href="${createLink(controller:"djReport", params:[report:'todasLasPeliculas']) }">Películas</a></li>
-				<li><a href="${createLink(controller:"djReport", params:[report:'todosLosSocios']) }">Socios</a></li>
+				<li><a href="${createLink(controller:"informes", action:"listaDistribuidor") }">Peliculas de distribuidora</a></li>
 				<li><a href="${createLink(controller:"djReport", params:[report:'contratosDeMantenimiento']) }">Contratos de mantenimiento</a></li>
-				<li><a href="${createLink(controller:"djReport", params:[report:'alquileresPendientes']) }">Alquileres pendientes</a></li>														
+				<li><a href="${createLink(controller:"djReport", params:[report:'alquileresPendientes']) }">Alquileres pendientes</a></li>	
+				<li><a href="${createLink(controller:"djReport", params:[report:'todasLasPeliculas']) }">Películas disponibles</a></li>
+				<li><a href="${createLink(controller:"djReport", params:[report:'todosLosSocios']) }">Socios afiliados</a></li>
+
+													
 			   </ul>
 		  </li>
 			<li><a href="${createLink(controller:"logout")}">Salir</a></li>

@@ -48,9 +48,9 @@
 					
 						<td>${fieldValue(bean: distribuidorInstance, field: "cif")}</td>
 					
-						<td><g:formatDate date="${distribuidorInstance.fechaInicioContrato}" /></td>
+						<td><g:formatDate date="${distribuidorInstance.fechaInicioContrato}" format="dd-MM-yyyy" /></td>
 					
-						<td><g:formatDate date="${distribuidorInstance.fechaFinContrato}" /></td>
+						<td><g:formatDate date="${distribuidorInstance.fechaFinContrato}" format="dd-MM-yyyy" /></td>
 					
 						<td>${fieldValue(bean: distribuidorInstance, field: "e_mail")}</td>
 					

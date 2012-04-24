@@ -19,27 +19,23 @@
 				${flash.message}
 			</div>
 		</g:if>
-		
-
-
-
 		<g:form controller="djReport" action="index" >
 				<fieldset class="form">
-					
+					<div class="fieldcontain ${hasErrors(bean: distribuidorInstance, field: 'distribuidor', 'error')} required">
 					<label for="distribuidor"> <g:message code="distribuidor.label"
 							default="Distribuidora" /> <span class="required-indicator">*</span>
 					</label>
-					<g:select id="id" name="id"
-						from="${listaDistribuidor}" optionKey="id" required="true"
+					<g:select id="distribuidor" name="id"
+						from="${listaDistribuidor}" optionKey="id" required=""
 						value="" class="many-to-one" />
 					</div>
+				</fieldset>	
 					<g:hiddenField name="report" value="soporteByDistribuidor" />
-				</fieldset>
 				<fieldset class="buttons">
+	
 					<g:submitButton name="generarInforme"  value="Generar Informe" />
 				</fieldset>
-
-		</g:form>
+			</g:form>
 	</div>
 </body>
 </html>

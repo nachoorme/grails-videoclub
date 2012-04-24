@@ -48,8 +48,10 @@
 					<td>${fieldValue(bean: facturaInstance, field: "socio")}</td>
 				
 					<td><g:formatDate date="${facturaInstance.fechaFactura}" format="dd-MM-yyyy" /></td>
+					
+					<td><g:formatNumber number="${facturaInstance.importe}" type="currency" currencyCode="EUR" /></td>
 				
-					<td>${fieldValue(bean: facturaInstance, field: "importe")}</td>
+
 					
 					
 					</tr>
@@ -65,7 +67,7 @@
 				<fieldset class="buttons">
 					<g:hiddenField name="id" value="${socioInstance?.id}" />
 					<g:if test="${importeTotal >= 18}">
-					     <g:link action="pagarTodas" id="${socioInstance?.id}">Cargo a cuenta</g:link>
+					     <g:link action="cargoCuenta" id="${socioInstance?.id}">Cargo a cuenta</g:link>
 					</g:if>
 					<g:else>
 						<g:link action="pagarTodas" id="${socioInstance?.id}">Pagar todas</g:link>

@@ -106,9 +106,10 @@ dynamicJasper {
 	
 	soporteByDistribuidor {
 		entity = 'soporte'
-		title = 'Informe de soportes por distribuidora'
+		title = 'Películas suministradas por distribuidora'
 		columns = ['id','pelicula', 'tipoSoporte','pelicula.distribuidor']
-		patterns = ['id': '#0000']
+		columnTitles = ['id': 'Código soporte', 'pelicula': 'Nombre película', 'tipoSoporte': 'Tipo Soporte', 'pelicula.distribuidor': 'Nombre distribuidora']
+		patterns = ['id': '#0']
 		fileName = null
 		
 		dataSource = { session, params -> Soporte.findAll('from Soporte as s where s.pelicula.distribuidor.id = ? order by id', [new Long(params.id)]) }
@@ -116,8 +117,9 @@ dynamicJasper {
 	
 	todasLasPeliculas {
 		entity = 'pelicula'
-		title = 'Informe de peliculas disponibles'
+		title = 'Informe de películas disponibles'
 		columns = ['id','titulo']
+		columnTitles = ['id': 'Código película', 'titulo': 'Nombre película']
 		patterns = ['id': '#0']
 		fileName = null
 		
@@ -128,7 +130,7 @@ dynamicJasper {
 		entity = 'socio'
 		title = 'Informe de los socios del videoclub'
 		columns = ['id','nombre','apellidos','telefono','fechaRegistro']
-		columnTitles = ['id': 'Numero socio']
+		columnTitles = ['id': 'Número socio', 'nombre' : 'Nombre', 'apellidos': 'Apellidos', 'telefono': 'Teléfono', 'fechaRegistro': 'Fecha registro socio']
 		patterns = ['id': '#0']
 		fileName = null
 		
@@ -139,7 +141,7 @@ dynamicJasper {
 		entity = 'distribuidor'
 		title = 'Informe de los contratos de mantenimiento'
 		columns = ['id','nombre','fechaInicioContrato','fechaFinContrato']
-		columnTitles = ['id': 'Cod. Distribuidora']
+		columnTitles = ['id': 'Código Distribuidora', 'nombre': 'Nombre distribuidora','fechaInicioContrato': 'Fecha inicio contrato','fechaFinContrato': 'Fecha finalización contrato' ]
 		patterns = ['id': '#0']
 		fileName = null
 		
@@ -150,7 +152,8 @@ dynamicJasper {
 		entity = 'alquiler'
 		title = 'Informe de alquileres pendientes'
 		columns = ['socio', 'soporte','fechaAlquiler','fechaDevolucion']
-		patterns = ['id': '#0000']
+		columnTitles = ['socio': 'Nombre socio', 'soporte' : 'Datos película', 'fechaAlquiler': 'Fecha alquiler','fechaDevolucion': 'Fecha prevista entrega' ]
+		patterns = ['id': '#0']
 		fileName = null
 		
 		dataSource = { session, params -> Alquiler.findAll('from Alquiler as a where a.fechaEntrega is null order by fechaAlquiler') }

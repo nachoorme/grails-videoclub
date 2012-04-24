@@ -51,7 +51,7 @@
 				<li class="fieldcontain">
 					<span id="tipoSoporte-label" class="property-label"><g:message code="soporte.precioAlquiler.label" default="Precio Alquiler" /></span>
 					
-						<span class="property-value" aria-labelledby="tipoSoporte-label"><g:fieldValue bean="${soporteInstance}" field="precioAlquiler"/></span>
+						<span class="property-value" aria-labelledby="tipoSoporte-label"><g:formatNumber number="${soporteInstance.precioAlquiler}" type="currency" currencyCode="EUR" /></span>
 					
 				</li>
 				</g:if>

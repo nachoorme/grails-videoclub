@@ -48,7 +48,7 @@
 					
 						<td>${fieldValue(bean: socioInstance, field: "apellidos")}</td>
 					
-						<td><g:formatDate date="${socioInstance.fechaRegistro}" /></td>
+						<td><g:formatDate date="${socioInstance.fechaRegistro}" format="dd-MM-yyyy" /></td>
 					
 						<td>${fieldValue(bean: socioInstance, field: "telefono")}</td>
 						
@@ -60,7 +60,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="paginateButtons">
+           <div class="pagination">
                 <g:paginate total="${socioInstanceTotal}" />
             </div>
         </div>

@@ -50,7 +50,7 @@
 				<li class="fieldcontain">
 					<span id="importe-label" class="property-label"><g:message code="factura.importe.label" default="Importe" /></span>
 					
-						<span class="property-value" aria-labelledby="importe-label"><g:fieldValue bean="${facturaInstance}" field="importe"/></span>
+						<span class="property-value" aria-labelledby="importe-label"><g:formatNumber number="${facturaInstance.importe}" type="currency" currencyCode="EUR" /></span>
 					
 				</li>
 				</g:if>
@@ -58,9 +58,8 @@
 			</ol>
 			<g:form>
 				<fieldset class="buttons">
-					<g:hiddenField name="id" value="${facturaInstance?.id}" />
 					<g:link action="pagarFactura" id="${facturaInstance?.id}"><g:message code="pagarFactura" default="Pagar factura" /></g:link>
-					<span class="button"><g:submitButton name="Imprimir" value="Imprimir Resguardo" onclick="javascript:if (window.print){window.print();}"/></span>
+					<g:submitButton name="Imprimir" value="Imprimir Resguardo" onclick="javascript:if (window.print){window.print();}"/></span>
 				</fieldset>
 			</g:form>
 		</div>

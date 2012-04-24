@@ -34,7 +34,7 @@
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<div style="float:right; width=320px;height=465px;">
-						<img id="caratula" src="" width="60%" height="60%"/>
+						<img id="caratula" src="" width="70%" height="70%"/>
 			</div>
 			<div>
 			<ol class="property-list pelicula">
@@ -106,7 +106,7 @@
 				<li class="fieldcontain">
 					<span id="precioBase-label" class="property-label"><g:message code="pelicula.precioBase.label" default="Precio Base" /></span>
 					
-						<span class="property-value" aria-labelledby="precioBase-label"><g:fieldValue bean="${peliculaInstance}" field="precioBase"/></span>
+						<span class="property-value" aria-labelledby="precioBase-label"><g:formatNumber number="${peliculaInstance.precioBase}" type="currency" currencyCode="EUR" /></span>
 					
 				</li>
 				</g:if>
