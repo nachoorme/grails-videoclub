@@ -1,3 +1,8 @@
+/* AUTOR: Líder equipo, Resp. Desarrollo
+FECHA: 11/04/2012
+NOMBRE MODULO: Alquiler.groovy
+DESCRIPCIÓN: Dominio Base Datos Alquiler */
+
 package modelodatos
 
 import java.util.Date;
