@@ -1,3 +1,8 @@
+/* AUTOR: Líder equipo, Resp. Desarrollo
+FECHA: 11/04/2012
+NOMBRE MODULO: AlquilerController.groovy
+DESCRIPCIÓN: Controlador Datos Alquiler */
+
 package modelodatos
 
 import org.springframework.dao.DataIntegrityViolationException
@@ -7,15 +12,21 @@ class AlquilerController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
+	/* NOMBRE FUNCIÓN: index
+	DESCRIPCIÓN: Función implementa la acción mostrada en el índice. */
     def index() {
         redirect(action: "list", params: params)
     }
 
+	/* NOMBRE FUNCIÓN: list
+	DESCRIPCIÓN: Función lista alquileres (básica). */
     def list() {
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
         [alquilerInstanceList: Alquiler.list(params), alquilerInstanceTotal: Alquiler.count()]
     }
 
+	/* NOMBRE FUNCIÓN: create
+	DESCRIPCIÓN: Función crear socios (básica). */
     def create() {
         [alquilerInstance: new Alquiler(params)]
     }
@@ -24,6 +35,8 @@ def facturasPendientesService
 def existeAlquilerService
 def buscaSocioService
 
+	/* NOMBRE FUNCIÓN: save
+	DESCRIPCIÓN: Función guarda datos alquileres. */
      def save() {
 		
 		float importeTotal=0;
@@ -59,7 +72,8 @@ def buscaSocioService
 		}
     }
 
-
+	 /* NOMBRE FUNCIÓN: show
+	 DESCRIPCIÓN: Función mostrar alquileres (básica). */
     def show() {
         def alquilerInstance = Alquiler.get(params.id)
         if (!alquilerInstance) {
@@ -71,6 +85,8 @@ def buscaSocioService
         [alquilerInstance: alquilerInstance]
     }
 
+	/* NOMBRE FUNCIÓN: edit
+	DESCRIPCIÓN: Función editar alquileres (básica). */
     def edit() {
         def alquilerInstance = Alquiler.get(params.id)
         if (!alquilerInstance) {
@@ -82,6 +98,8 @@ def buscaSocioService
         [alquilerInstance: alquilerInstance]
     }
 
+	/* NOMBRE FUNCIÓN: update
+	DESCRIPCIÓN: Función actualizar datos alquileres (básica). */
     def update() {
         def alquilerInstance = Alquiler.get(params.id)
         if (!alquilerInstance) {
@@ -112,6 +130,8 @@ def buscaSocioService
         redirect(action: "show", id: alquilerInstance.id)
     }
 
+	/* NOMBRE FUNCIÓN: delete
+	DESCRIPCIÓN: Función eliminar alquileres (básica). */
     def delete() {
         def alquilerInstance = Alquiler.get(params.id)
         if (!alquilerInstance) {
@@ -131,19 +151,25 @@ def buscaSocioService
         }
     }
 	
+	
+	/* NOMBRE FUNCIÓN: devolucion
+	DESCRIPCIÓN: Función listar socios con alquileres pendientes. */
 	def devolucion(){
 		
 		[listaSociosAlquileresPendientes:buscaSocioService.sociosConAlquileresPendientes()]
 	}
 	
 	
+	/* NOMBRE FUNCIÓN: devolverPelicula
+	DESCRIPCIÓN: Función listar alquileres pendientes de un socio. */
 	def devolverPelicula(){
-		println "PARAMETROS: ${params}"
 		def s = Socio.get(params.id)
 		def listaAlquileres = Alquiler.findAllBySocioAndFechaEntrega(s,null);
 		[alquilerInstanceList: listaAlquileres, alquilerInstanceTotal: listaAlquileres.size(),socioInstance:s]
 	}
 	
+	/* NOMBRE FUNCIÓN: procesarDevolucion
+	DESCRIPCIÓN: Función realiza la devolucion de alquiler de una película. */
 	def procesarDevolucion(){
 		def alquiler = Alquiler.get(params.id);
 		alquiler.fechaEntrega = new Date();
@@ -157,6 +183,9 @@ def buscaSocioService
 		redirect (action:"devolverPelicula",params:['id':alquiler.socio.id]);
 	}
 	
+	
+	/* NOMBRE FUNCIÓN: devolverTodas
+	DESCRIPCIÓN: Función realiza la devolucion de todas las peliculas alquiladas por un socio. */
 	def devolverTodas(){
 		def socio = Socio.get(params.id)
 		socio.alquileres.each{alquiler ->
