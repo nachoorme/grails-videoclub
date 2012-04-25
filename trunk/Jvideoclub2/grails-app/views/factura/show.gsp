@@ -59,7 +59,7 @@
 			<g:form>
 				<fieldset class="buttons">
 					<g:link action="pagarFactura" id="${facturaInstance?.id}"><g:message code="pagarFactura" default="Pagar factura" /></g:link>
-					<g:submitButton name="Imprimir" value="Imprimir Resguardo" onclick="javascript:if (window.print){window.print();}"/></span>
+					<g:link action="show" id="${facturaInstance?.id}" onclick="javascript:if (window.print){window.print();}">Imprimir Resguardo</g:link></span>
 				</fieldset>
 			</g:form>
 		</div>
