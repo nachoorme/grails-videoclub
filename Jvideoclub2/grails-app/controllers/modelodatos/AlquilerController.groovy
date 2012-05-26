@@ -52,8 +52,8 @@ def buscaSocioService
 			flash.message = "La operacion no se puede realizar porque hay alquileres pendientes."
 			redirect (action:"create")
 		}else{
-		
-			params.soportes.each{ idSoporte ->
+			def soportes = params.list("soportes")
+			soportes.each{ idSoporte ->
 				def soporte = Soporte.get(idSoporte);
 				soporte.estaDisponible=false;
 				soporte.save(flush:true);

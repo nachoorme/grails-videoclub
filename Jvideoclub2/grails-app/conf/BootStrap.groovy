@@ -2,7 +2,7 @@ import modelodatos.*;
 import security.*;
 class BootStrap {
 
-    def init = { servletContext ->
+	def init = { servletContext ->
 		def distribuidor1
 		def distribuidor2
 		def distribuidor3
@@ -65,55 +65,55 @@ class BootStrap {
 		}
 		
 		if(!Soporte.count()){
-			new Soporte (pelicula: pelicula1, tipoSoporte: TipoSoporte.DVD).save(failOnError: true)
-			new Soporte (pelicula: pelicula1, tipoSoporte: TipoSoporte.CINTA).save(failOnError: true)
-			new Soporte (pelicula: pelicula2, tipoSoporte: TipoSoporte.DVD).save(failOnError: true)
-			new Soporte (pelicula: pelicula2, tipoSoporte: TipoSoporte.CINTA).save(failOnError: true)
-			new Soporte (pelicula: pelicula2, tipoSoporte: TipoSoporte.DVD).save(failOnError: true)
-			new Soporte (pelicula: pelicula2, tipoSoporte: TipoSoporte.CINTA).save(failOnError: true)
-			new Soporte (pelicula: pelicula3, tipoSoporte: TipoSoporte.DVD).save(failOnError: true)
-			new Soporte (pelicula: pelicula3, tipoSoporte: TipoSoporte.CINTA).save(failOnError: true)
-			new Soporte (pelicula: pelicula4, tipoSoporte: TipoSoporte.DVD).save(failOnError: true)
-			new Soporte (pelicula: pelicula4, tipoSoporte: TipoSoporte.CINTA).save(failOnError: true)
-			new Soporte (pelicula: pelicula5, tipoSoporte: TipoSoporte.DVD).save(failOnError: true)
-			new Soporte (pelicula: pelicula5, tipoSoporte: TipoSoporte.CINTA).save(failOnError: true)
-			new Soporte (pelicula: pelicula6, tipoSoporte: TipoSoporte.DVD).save(failOnError: true)
-			new Soporte (pelicula: pelicula6, tipoSoporte: TipoSoporte.CINTA).save(failOnError: true)
-			new Soporte (pelicula: pelicula7, tipoSoporte: TipoSoporte.DVD).save(failOnError: true)
-			new Soporte (pelicula: pelicula7, tipoSoporte: TipoSoporte.CINTA).save(failOnError: true)
-			new Soporte (pelicula: pelicula8, tipoSoporte: TipoSoporte.DVD).save(failOnError: true)
-			new Soporte (pelicula: pelicula8, tipoSoporte: TipoSoporte.CINTA).save(failOnError: true)
-			new Soporte (pelicula: pelicula9, tipoSoporte: TipoSoporte.DVD).save(failOnError: true)
-			new Soporte (pelicula: pelicula9, tipoSoporte: TipoSoporte.CINTA).save(failOnError: true)
-			new Soporte (pelicula: pelicula10, tipoSoporte: TipoSoporte.DVD).save(failOnError: true)
-			new Soporte (pelicula: pelicula10, tipoSoporte: TipoSoporte.CINTA).save(failOnError: true)
-			new Soporte (pelicula: pelicula11, tipoSoporte: TipoSoporte.DVD).save(failOnError: true)
-			new Soporte (pelicula: pelicula11, tipoSoporte: TipoSoporte.CINTA).save(failOnError: true)
-			new Soporte (pelicula: pelicula12, tipoSoporte: TipoSoporte.DVD).save(failOnError: true)
-			new Soporte (pelicula: pelicula12, tipoSoporte: TipoSoporte.CINTA).save(failOnError: true)
-			new Soporte (pelicula: pelicula13, tipoSoporte: TipoSoporte.DVD).save(failOnError: true)
-			new Soporte (pelicula: pelicula13, tipoSoporte: TipoSoporte.CINTA).save(failOnError: true)
-			new Soporte (pelicula: pelicula14, tipoSoporte: TipoSoporte.DVD).save(failOnError: true)
-			new Soporte (pelicula: pelicula14, tipoSoporte: TipoSoporte.CINTA).save(failOnError: true)
-			new Soporte (pelicula: pelicula15, tipoSoporte: TipoSoporte.DVD).save(failOnError: true)
-			new Soporte (pelicula: pelicula15, tipoSoporte: TipoSoporte.CINTA).save(failOnError: true)
+			new Soporte (pelicula: pelicula1, tipoSoporte: TipoSoporte.DVD, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula1, tipoSoporte: TipoSoporte.CINTA, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula2, tipoSoporte: TipoSoporte.DVD, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula2, tipoSoporte: TipoSoporte.CINTA, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula2, tipoSoporte: TipoSoporte.DVD, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula2, tipoSoporte: TipoSoporte.CINTA, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula3, tipoSoporte: TipoSoporte.DVD, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula3, tipoSoporte: TipoSoporte.CINTA, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula4, tipoSoporte: TipoSoporte.DVD, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula4, tipoSoporte: TipoSoporte.CINTA, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula5, tipoSoporte: TipoSoporte.DVD, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula5, tipoSoporte: TipoSoporte.CINTA, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula6, tipoSoporte: TipoSoporte.DVD, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula6, tipoSoporte: TipoSoporte.CINTA, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula7, tipoSoporte: TipoSoporte.DVD, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula7, tipoSoporte: TipoSoporte.CINTA, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula8, tipoSoporte: TipoSoporte.DVD, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula8, tipoSoporte: TipoSoporte.CINTA, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula9, tipoSoporte: TipoSoporte.DVD, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula9, tipoSoporte: TipoSoporte.CINTA, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula10, tipoSoporte: TipoSoporte.DVD, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula10, tipoSoporte: TipoSoporte.CINTA, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula11, tipoSoporte: TipoSoporte.DVD, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula11, tipoSoporte: TipoSoporte.CINTA, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula12, tipoSoporte: TipoSoporte.DVD, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula12, tipoSoporte: TipoSoporte.CINTA, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula13, tipoSoporte: TipoSoporte.DVD, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula13, tipoSoporte: TipoSoporte.CINTA, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula14, tipoSoporte: TipoSoporte.DVD, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula14, tipoSoporte: TipoSoporte.CINTA, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula15, tipoSoporte: TipoSoporte.DVD, estaDisponible: true).save(failOnError: true)
+			new Soporte (pelicula: pelicula15, tipoSoporte: TipoSoporte.CINTA, estaDisponible: true).save(failOnError: true)
 			
 		}
 		
 		if (!Role.count()){
-			def adminRole = new Role(authority: 'ROLE_ADMIN').save(flush: true) 
+			def adminRole = new Role(authority: 'ROLE_ADMIN').save(flush: true)
 			def userRole = new Role(authority: 'ROLE_USER').save(flush: true)
 			
-			def testUser = new User(username: 'encargado', enabled: true, password: 'encargado') 
+			def testUser = new User(username: 'empleado', enabled: true, password: 'empleado')
 			testUser.save(flush: true)
 			
 			UserRole.create testUser, adminRole, true
 			
-			assert User.count() == 1 
-			assert Role.count() == 2 
+			assert User.count() == 1
+			assert Role.count() == 2
 			assert UserRole.count() == 1
 		}
-    }
-    def destroy = {
-    }
+	}
+	def destroy = {
+	}
 }
